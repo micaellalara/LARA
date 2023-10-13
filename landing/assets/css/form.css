@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4; /* Light gray background color */
+    color: #333; /* Dark text color */
+    padding: 20px;
+}
+
+.container .content {
+    text-align: center;
+}
+
+.container .content h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #007BFF; /* Blue color */
+    font-weight: bolder;
+}
+
+.container .content h3 span {
+    background: #007BFF; /* Blue background color */
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+.container .content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container .content h1 span {
+    color: #007BFF;
+}
+
+.container .content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.container .content .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 24px;
+    background: #007BFF;
+    color: #fff;
+    margin: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.container .content .btn:hover {
+    background: #0056b3;
+}
+
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff; /* White background color */
+    padding: 20px;
+    color: #333;
+}
+
+.form-container form {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    background: #f4f4f4;
+    text-align: center;
+    width: 500px;
+}
+
+.form-container form h3 {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.form-container form input,
+.form-container form select {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    margin: 10px 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container form select option {
+    background: #fff;
+}
+
+.form-container form .form-btn {
+    background: #007BFF;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    transition: background-color 0.3s;
+}
+
+.form-container form .form-btn:hover {
+    background: #0056b3;
+}
+
+.form-container form p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.form-container form p a {
+    color: #007BFF;
+}
+
+.form-container form .error-msg {
+    margin: 15px 0;
+    background: #DC3545;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+}
