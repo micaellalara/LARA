@@ -35,8 +35,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<!-- Rest of your HTML and registration form here -->
-
 
 <div class="form-container" style="margin: 200px 0 200px 0;">
     <form action="" method="post">
