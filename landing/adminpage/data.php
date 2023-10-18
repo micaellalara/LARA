@@ -13,21 +13,8 @@
         <canvas id="myChart"></canvas>
     </div>
 
-    <?php
-    // Database connection configuration
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "user_db"; // Replace with your actual database name
-    
-    // Create a connection to the database
-    $conn = new mysqli($servername, $username, $password, $database);
-
-    // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
+<?php include_once('include/DBUtil.php');?>
+<?php
     // Query to fetch daily activity data
     $query = "SELECT DAYOFWEEK(activity_datetime) AS day, COUNT(*) AS count FROM activity GROUP BY DAYOFWEEK(activity_datetime)";
 
@@ -42,7 +29,6 @@
         }
     }
 
-    // Close the database connection
     $conn->close();
     ?>
 
@@ -53,10 +39,11 @@
             datasets: [{
                 label: 'Number of Activities Added Per Day',
                 data: <?php echo json_encode($data); ?>,
-                backgroundColor: 'rgba(75, 192, 192, 0.2',
-                borderColor: 'rgb(75, 192, 192)',
+                backgroundColor: "rgba(78, 115, 223, 0.5)",
+                borderColor: "rgba(78, 115, 223, 1)",
                 borderWidth: 1,
-                hoverBackgroundColor: 'rgba(75, 192, 192, 0.5' // Change this color
+                hoverBorderColor: "rgba(78, 115, 223, 1)",
+                hoverBackgroundColor: "rgba(78, 115, 223, 0.7)"
             }]
         };
 

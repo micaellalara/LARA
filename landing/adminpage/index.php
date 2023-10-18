@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+
+$conn = mysqli_connect('localhost', 'root', '', 'user_db');
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$userID = $_SESSION['userID'];
+
+$sql = "SELECT * FROM user_form WHERE id = '$userID' ";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +52,6 @@
 
 <body id="page-top">
     <?php
-    session_start(); // Start the session
     
     $host = "localhost";
     $username = "root";
@@ -131,11 +154,12 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
                     aria-expanded="true" aria-controls="collapsePage">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Daily Activity Chart</span>
+                    <span>Activity Chart</span>
                 </a>
                 <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="/lara/landing/adminpage/data.php">Activity Chart</a>
+                        <a class="collapse-item" href="/lara/landing/adminpage/data.php">Daily Activity Chart</a>
+                        <a class="collapse-item" href="/lara/landing/adminpage/monthbar.php">Monthly Activity Chart</a>
                     </div>
                 </div>
             </li>
@@ -320,7 +344,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <span><b>ADMIN</b></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <span><b> <?php echo $row['name'] ?></b></span>
                                     <img class="img-profile rounded-circle"
                                         src="/lara/landing/assets/img/vectors/admin.png">
                             </a>
@@ -604,7 +628,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                <a class="btn btn-primary" href="/lara/landing/">Logout</a>
+                                <a class="btn btn-primary" href="/lara/landing/signup/logout.php">Logout</a>
                             </div>
                         </div>
                     </div>

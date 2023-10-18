@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -162,6 +165,8 @@
 
 <body>
     <?php
+    $userID = $_SESSION['userID'];
+
     $conn = mysqli_connect('localhost', 'root', '', 'user_db');
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
@@ -170,7 +175,7 @@
     // Function to fetch and display activities
     function displayActivities($conn)
     {
-        $sql = "SELECT * FROM activity";
+        $sql = "SELECT * FROM activity ";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -187,7 +192,7 @@
                 echo "<td>" . $row['address'] . "</td>";
                 echo "<td>" . $row['ootd'] . "</td>";
                 echo "<td>" . $row['status'] . "</td>";
-                echo "<td><a href='edit_activity.php?id=" . $row['id'] . "'>Edit</a> | <a href='your_php_script.php?delete=" . $row['id'] . "'>Delete</a></td>";
+                echo "<td><a href='edit_activity.php?id=" . $row['id'] . "'>Edit</a> | <a href='user.php?delete=" . $row['id'] . "'>Delete</a></td>";
                 echo "</tr>";
             }
 
@@ -210,10 +215,10 @@
             if (empty($name) || empty($date) || empty($time) || empty($address) || empty($ootd) || empty($status)) {
                 echo "Please fill in all fields.";
             } else {
-                $sql = "INSERT INTO activity (name, date, time, address, ootd, status) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql = "INSERT INTO activity (name, date, time, address, ootd, status, userID) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
                 $stmt = mysqli_prepare($conn, $sql);
-                mysqli_stmt_bind_param($stmt, "ssssss", $name, $date, $time, $address, $ootd, $status);
+                mysqli_stmt_bind_param($stmt, "ssssssi", $name, $date, $time, $address, $ootd, $status, $userID);
 
                 if (mysqli_stmt_execute($stmt)) {
                     echo "<script>alert('Activity added successfully.');</script>";
@@ -286,7 +291,7 @@
                             </thead>
                             <tbody id="activity-list">
                                 <?php
-                                $query = "SELECT * FROM activity";
+                                $query = "SELECT * FROM activity WHERE userID = '$userID'";
                                 $result = mysqli_query($conn, $query);
                                 $counter = 1;
 
@@ -325,7 +330,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addActivityModalLabel">Addd Activity</h5>
+                    <h5 class="modal-title" id="addActivityModalLabel">Add Activity</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

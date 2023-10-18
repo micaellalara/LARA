@@ -16,25 +16,19 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_array($result);
 
         if ($row['user_type'] == 'admin') {
-            $_SESSION['user_type'] = 'admin';
-        } elseif ($row['user_type'] == 'user') {
-            $_SESSION['user_type'] = 'user';
-        }
-
-        $_SESSION['user_name'] = $row['name'];
-
-        // Update user status to 'active'
-        mysqli_query($conn, "UPDATE user_form SET status = 'active' WHERE email = '$email'");
-
-        if ($_SESSION['user_type'] == 'admin') {
             header('location: /lara/landing/adminpage/index.php');
-        } elseif ($_SESSION['user_type'] == 'user') {
+        } else if ($row['user_type'] == 'user') {
             header('location: /lara/landing/userpage/user.php');
         }
+
+        $_SESSION['userID'] = $row['id'];
+        $_SESSION['Role'] = $row['user_type'];
     } else {
         $error[] = 'Incorrect email or password!';
     }
 }
+
+
 ?>
 
 <div class="form-container">
