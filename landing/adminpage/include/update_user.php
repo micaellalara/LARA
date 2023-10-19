@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $newGender = $_POST['new_gender'];
     $newStatus = $_POST['new_status'];
 
-    // Perform an UPDATE query to modify the record
     $sql = "UPDATE user_form SET name='$newName', email='$newEmail', user_type='$newUserType', gender='$newGender', status='$newStatus' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {

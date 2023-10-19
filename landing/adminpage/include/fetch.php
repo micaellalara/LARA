@@ -11,21 +11,17 @@
 
 
 <?php
-// Define database connection constants
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'user_db');
 
-// Create a database connection
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-// Check the connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Handle user status change
 if (isset($_POST['new_status']) && isset($_POST['user_id'])) {
     $userId = $_POST['user_id'];
     $newStatus = $_POST['new_status'];
@@ -39,7 +35,6 @@ if (isset($_POST['new_status']) && isset($_POST['user_id'])) {
     }
 }
 
-// Handle user deletion
 if (isset($_POST['delete'])) {
     $userId = $_POST['delete_id'];
 
@@ -52,7 +47,6 @@ if (isset($_POST['delete'])) {
     }
 }
 
-// Query the database
 $sql = "SELECT * FROM user_form";
 $result = mysqli_query($conn, $sql);
 
@@ -64,8 +58,8 @@ if (!$result) {
 
     <style>
         body {
-            color: #333; /* Text color */
-            background: #f5f5f5; /* Background color */
+            color: #333; 
+            background: #f5f5f5;
             font-family: 'Roboto', sans-serif;
             font-size: 14px;
         }
@@ -119,11 +113,11 @@ if (!$result) {
             vertical-align: middle;
         }
         table.table th {
-            background: #f5f5f5; /* Header background color */
+            background: #f5f5f5; 
             font-weight: bold;
         }
         table.table td {
-            background: #ffffff; /* Row background color */
+            background: #ffffff; 
             text-align: center;
         }
         table.table td:last-child {
@@ -131,14 +125,14 @@ if (!$result) {
         }
         table.table td a {
             font-weight: bold;
-            color: #007BFF; /* Link color */
+            color: #007BFF; 
             text-decoration: none;
         }
         table.table td a.edit {
-            color: #FFC107; /* Edit link color */
+            color: #FFC107;
         }
         table.table td a.delete {
-            color: #F44336; /* Delete link color */
+            color: #F44336; 
         }
         table.table td i {
             font-size: 19px;
@@ -215,6 +209,5 @@ if (!$result) {
 </html>
 
 <?php
-// Close the database connection
 mysqli_close($conn);
 ?>

@@ -15,7 +15,6 @@
 
 <?php include_once('include/DBUtil.php');?>
 <?php
-    // Query to fetch daily activity data
     $query = "SELECT DAYOFWEEK(activity_datetime) AS day, COUNT(*) AS count FROM activity GROUP BY DAYOFWEEK(activity_datetime)";
 
     $result = $conn->query($query);

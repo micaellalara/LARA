@@ -1,20 +1,16 @@
 <?php include_once('include/header.php');?>
 <?php
-// Define database connection constants
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'user_db');
 
-// Create a database connection
 $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-// Check the connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Handle user status change
 if (isset($_POST['new_status']) && isset($_POST['user_id'])) {
     $userId = $_POST['user_id'];
     $newStatus = $_POST['new_status'];
@@ -28,7 +24,6 @@ if (isset($_POST['new_status']) && isset($_POST['user_id'])) {
     }
 }
 
-// Handle user deletion
 if (isset($_POST['delete'])) {
     $userId = $_POST['delete_id'];
 
@@ -41,11 +36,9 @@ if (isset($_POST['delete'])) {
     }
 }
 
-// Query the database
 $sql = "SELECT * FROM user_form";
 $result = mysqli_query($conn, $sql);
 
-// Check if the query was successful
 if (!$result) {
     die("Query failed: " . mysqli_error($conn));
 }
@@ -110,7 +103,6 @@ if (!$result) {
 </div>
 
 <?php
-// Close the database connection
 mysqli_close($conn);
 ?>
 <?php include_once('include/footer.php');?>

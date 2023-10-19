@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
 </head>
 <body>
 <div class="row">
@@ -23,17 +21,14 @@
 </div>
 
 <script>
-// Function to fetch data from the PHP script
 function fetchUserData() {
     return fetch('fetch_daily_user_registrations.php')
         .then(response => response.json());
 }
 
-// Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-// Function to create the bar chart
 function createBarChart(userData) {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const ctx = document.getElementById("myBarChart");
@@ -57,7 +52,7 @@ function createBarChart(userData) {
                 yAxes: [{
                     ticks: {
                         beginAtZero: true,
-                        suggestedMax: 50, // Set the maximum value for the y-axis
+                        suggestedMax: 50,
                     },
                     gridLines: {
                         color: "rgba(0, 0, 0, 0.1)",
@@ -81,7 +76,6 @@ function createBarChart(userData) {
     });
 }
 
-// Fetch user registration data and create the bar chart
 fetchUserData()
     .then(userData => createBarChart(userData))
     .catch(error => console.error("Error fetching data:", error));

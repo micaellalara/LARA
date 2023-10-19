@@ -1,5 +1,4 @@
 
-/* Stylish Business-Like Theme */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -71,7 +70,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Add Activity Form */
 #addActivityForm,
 #updateActivityForm {
     display: none;

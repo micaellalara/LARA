@@ -8,19 +8,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Management</title>
-    <!-- Include Bootstrap CSS link here -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="/lara/landing/adminpage/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/lara/landing/adminpage/css/table.css" rel="stylesheet">
     <style>
-        /* Responsive Styles */
         @media screen and (max-width: 1200px) {
             .activity-card {
                 margin: 10px;
                 padding: 10px;
             }
-
-            /* Add more responsive styles as needed */
         }
 
         @media screen and (max-width: 992px) {
@@ -28,8 +24,6 @@
                 margin: 5px;
                 padding: 5px;
             }
-
-            /* Add more responsive styles as needed */
         }
 
         @media screen and (max-width: 768px) {
@@ -37,8 +31,6 @@
                 margin: 10px;
                 padding: 10px;
             }
-
-            /* Add more responsive styles as needed */
         }
 
         @media screen and (max-width: 576px) {
@@ -46,8 +38,6 @@
                 margin: 5px;
                 padding: 5px;
             }
-
-            /* Add more responsive styles as needed */
         }
 
         .activity-card {
@@ -119,7 +109,6 @@
             color: white;
         }
 
-        /* Responsive Styles */
         @media screen and (max-width: 768px) {
             .activity-card {
                 margin: 10px;
@@ -172,7 +161,6 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    // Function to fetch and display activities
     function displayActivities($conn)
     {
         $sql = "SELECT * FROM activity ";
@@ -236,7 +224,6 @@
             $ootd = mysqli_real_escape_string($conn, $_POST['edit-activity-ootd']);
             $status = mysqli_real_escape_string($conn, $_POST['edit-activity-status']);
 
-            // Input validation for editing
             if (empty($name) || empty($date) || empty($time) || empty($address) || empty($ootd) || empty($status)) {
                 echo "Please fill in all fields.";
             } else {

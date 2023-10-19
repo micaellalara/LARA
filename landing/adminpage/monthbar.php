@@ -21,28 +21,23 @@
         $password = "";
         $dbname = "user_db";
 
-        // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
-        // Check connection
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
         }
         $countActSql = "SELECT * FROM activity";
         $countResult = mysqli_query($conn, $countActSql);
 
-        $activityCount = 0; // Initialize activity count for the specified month
+        $activityCount = 0;
     
         if (mysqli_num_rows($countResult) > 0) {
             while ($row = mysqli_fetch_assoc($countResult)) {
                 $datetimeString = $row['date'];
                 $dateTime = new DateTime($datetimeString);
 
-                // Convert DateTime object to Unix timestamp
                 $timestamp = $dateTime->getTimestamp();
 
-                $month = date('n', $timestamp); // Use the Unix timestamp
-    
-                // Check if the activity occurred in the specified month
+                $month = date('n', $timestamp); 
                 if ($month == $specifiedMonth) {
                     $activityCount++;
                 }
@@ -50,7 +45,7 @@
 
             return $activityCount;
         } else {
-            return 0; // No results found
+            return 0; 
         }
     }
     ?>

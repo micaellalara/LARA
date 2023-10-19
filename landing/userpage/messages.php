@@ -1,5 +1,4 @@
 <?php
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +10,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch messages from the database
 $sql = "SELECT * FROM messages ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 
@@ -23,7 +21,6 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Include 'header.php' after setting headers
 include_once("../userpage/include/header.php");
 ?>
 

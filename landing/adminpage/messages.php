@@ -1,5 +1,4 @@
 <?php
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -11,7 +10,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch messages from the database
 $sql = "SELECT * FROM messages ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 
@@ -24,8 +22,7 @@ if ($result->num_rows > 0) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Handle the message submission
-    $sender = "Admin"; // Customize the sender as needed
+    $sender = "Admin";
     $message = $_POST['message'];
     $timestamp = date('Y-m-d H:i:s');
 
@@ -41,13 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Include 'header.php' after setting headers
 include_once("../adminpage/include/header.php");
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Announcements</title>
     <style>
@@ -127,7 +122,6 @@ include_once("../adminpage/include/header.php");
 
     <a href="/lara/landing/adminpage/" class="back-link">Back to Dashboard</a>
 </body>
-
 </html>
 
 <div style="margin-top: 10%;">
