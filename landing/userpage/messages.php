@@ -21,9 +21,9 @@ if ($result->num_rows > 0) {
     }
 }
 
+
 include_once("../userpage/include/header.php");
 ?>
-
 <!DOCTYPE html>
 <html>
 

@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = $_POST['password'];
     $cpass = $_POST['cpassword'];
-    $user_type = $_POST['user'];
+    $user_type = $_POST['user_type'];
     $gender = $_POST['gender'];
 
     $select = "SELECT * FROM user_form WHERE email = '$email'";
@@ -52,6 +52,7 @@ if (isset($_POST['submit'])) {
         <input type="password" name="cpassword" required placeholder="Confirm your Password">
         <select name="user_type">
             <option value="user">USER</option>
+            <option value="user">ADMIN</option>
         </select>
         <label for="gender">Gender:</label>
         <input type="radio" name="gender" value="Male" required> Male
