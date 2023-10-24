@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -349,8 +347,6 @@
                             <label for="activity-status">Status:</label>
                             <select class="form-control" id="activity-status" name="activity-status">
                                 <option value="In progress">In progress</option>
-                                <option value="Finished">Finished</option>
-                                <option value="Canceled">Canceled</option>
                             </select>
                         </div>
                 </div>
@@ -404,7 +400,7 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="edit-activity-status">Status:</label>
+                            <label for="edit-activity-status">Remarks:</label>
                             <select class="form-control" id="edit-activity-status" name="edit-activity-status">
                                 <option value="In progress">In progress</option>
                                 <option value="Finished">Finished</option>

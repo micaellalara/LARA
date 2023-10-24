@@ -29,7 +29,7 @@ if (isset($_POST['new_status']) && isset($_POST['user_id'])) {
     $sql = "UPDATE user_form SET status='$newStatus' WHERE id=$userId";
 
     if (mysqli_query($conn, $sql)) {
-        echo '<script>alert("User status updated successfully.")</script>';
+        echo '<script>alert("User status updated successfully.")</script>'; 
     } else {
         echo "Error updating user status: " . mysqli_error($conn);
     }
@@ -50,7 +50,6 @@ if (isset($_POST['delete'])) {
 $sql = "SELECT * FROM user_form";
 $result = mysqli_query($conn, $sql);
 
-// Check if the query was successful
 if (!$result) {
     die("Query failed: " . mysqli_error($conn));
 }
