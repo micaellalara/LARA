@@ -88,7 +88,13 @@ $row = mysqli_fetch_array($result);
                         <h6 class="collapse-header">Login Screens:</h6>
                         <a class="collapse-item" href="/lara/landing/signup/login.php">Login</a>
                         <a class="collapse-item" href="/lara/landing/signup/registration.php">Register</a>
+                    </div>
+                </div>
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Additional Pages:</h6>
                         <a class="collapse-item" href="/lara/landing/userpage/user.php">Activity Management</a>
+                        <a class="collapse-item" href="/lara/landing/userpage/messages.php">Announcements</a>
                     </div>
                 </div>
             </li>

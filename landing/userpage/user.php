@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity Management</title>
+    <title>User - Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="/lara/landing/adminpage/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="/lara/landing/adminpage/css/table.css" rel="stylesheet">
@@ -270,7 +270,7 @@
                                     <th scope="col">Time</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">OOTD</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Status / Remarks</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
