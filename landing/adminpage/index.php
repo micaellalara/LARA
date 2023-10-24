@@ -48,7 +48,7 @@ $row = mysqli_fetch_array($result);
 
 <body id="page-top">
     <?php
-    
+
     $host = "localhost";
     $username = "root";
     $password = "";
@@ -61,14 +61,14 @@ $row = mysqli_fetch_array($result);
     }
 
 
-    $queryTotal = "SELECT COUNT(*) as userCount FROM user_form";
+    $queryTotal = "SELECT COUNT(*) as activityCount FROM activity";
     $resultTotal = mysqli_query($conn, $queryTotal);
 
     if (!$resultTotal) {
         die("Query failed: " . mysqli_error($conn));
     }
     $rowTotal = mysqli_fetch_assoc($resultTotal);
-    $userCount = $rowTotal['userCount'];
+    $activityCount = $rowTotal['activityCount'];
 
     $queryMale = "SELECT COUNT(*) as maleCount FROM user_form WHERE gender = 'male'";
     $resultMale = mysqli_query($conn, $queryMale);
@@ -338,7 +338,9 @@ $row = mysqli_fetch_array($result);
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <span><b> <?php echo $row['name'] ?></b></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <span><b>
+                                            <?php echo $row['name'] ?>
+                                        </b></span>
                                     <img class="img-profile rounded-circle"
                                         src="/lara/landing/assets/img/vectors/admin.png">
                             </a>
@@ -382,10 +384,13 @@ $row = mysqli_fetch_array($result);
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Total Users</div>
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" a
+                                                href="activity_list.php">
+                                                <a href="activity_list.php" style="text-decoration: none;">Total User
+                                                    Activities</a>
+                                            </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?php echo $userCount; ?>
+                                                <?php echo $activityCount; ?>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -404,7 +409,8 @@ $row = mysqli_fetch_array($result);
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Male Users</div>
+                                                <a href="male.php" style="text-decoration: none;">Male Users</a>
+                                            </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php echo $maleCount; ?>
                                             </div>
@@ -422,8 +428,9 @@ $row = mysqli_fetch_array($result);
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Female
-                                                Users</div>
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                <a href="female.php" style="text-decoration: none;">Female Users</a>
+                                            </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 <?php echo $femaleCount; ?>
                                             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2023 at 02:04 PM
+-- Generation Time: Oct 24, 2023 at 04:00 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -57,7 +57,8 @@ INSERT INTO `activity` (`id`, `name`, `date`, `time`, `address`, `ootd`, `status
 (32, 'Laag', '2023-11-28', '10:59:00', 'Mabolo', 'Jeans, Shoes, Duckdive', 'In progress', '2023-10-18 19:59:58', 3),
 (33, 'Read Books', '2023-09-22', '00:00:00', 'Venice, Italy', 'Twopiece', 'In progress', '2023-10-18 20:01:15', 10),
 (34, 'Skydiving', '2023-06-01', '10:02:00', 'Ocean', 'Parachute', 'In progress', '2023-10-18 20:02:05', 10),
-(35, 'Dance Clinic', '2023-05-03', '09:02:00', 'JustJerk Studio', 'Duckdive Sleeve', 'In progress', '2023-10-18 20:03:04', 12);
+(35, 'Dance Clinic', '2023-05-03', '09:02:00', 'JustJerk Studio', 'Duckdive Sleeve', 'In progress', '2023-10-18 20:03:04', 12),
+(36, 'Dance', '2023-10-19', '19:00:00', 'New Era', 'USC Uniform', 'In progress', '2023-10-19 16:58:27', 27);
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,8 @@ INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`, `gender
 (22, 'Isabelita J. Lara', 'letty@gmail.com', 'letty24', 'user', 'Female', 'inactive', '2023-10-12 09:00:56'),
 (23, 'Endrita J. Lara', 'endrit@gmail.com', 'endrit', 'user', 'Female', 'inactive', '2023-10-12 09:01:15'),
 (24, 'Crischan Joe Lara', 'joe@gmail.com', 'jojo', 'user', 'Male', 'inactive', '2023-10-12 09:19:33'),
-(25, 'Chielo Elguerra', 'chielo@hotmail.com', 'chielot16', 'user', 'Female', 'inactive', '2023-10-13 11:05:43');
+(25, 'Chielo Elguerra', 'chielo@hotmail.com', 'chielot16', 'user', 'Female', 'inactive', '2023-10-13 11:05:43'),
+(27, 'Danica Shane', 'danica@gmail.com', 'danica123', 'user', 'Female', 'active', '2023-10-19 08:57:51');
 
 --
 -- Indexes for dumped tables
@@ -152,7 +154,7 @@ ALTER TABLE `user_form`
 -- AUTO_INCREMENT for table `activity`
 --
 ALTER TABLE `activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `messages`
@@ -164,7 +166,7 @@ ALTER TABLE `messages`
 -- AUTO_INCREMENT for table `user_form`
 --
 ALTER TABLE `user_form`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
