@@ -1,4 +1,4 @@
-<?php include_once('include/header.php'); ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -37,6 +37,7 @@
 </style>
 
 <body>
+<?php include_once('include/header.php'); ?>
     <?php
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');

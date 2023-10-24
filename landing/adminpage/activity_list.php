@@ -1,4 +1,4 @@
-<?php include_once('include/header.php'); ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -40,6 +40,7 @@
 </style>
 
 <body>
+<?php include_once('include/header.php'); ?>
     <?php
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
@@ -53,7 +54,7 @@
     }
     ?>
 
-    <div class="container">
+    <div class="container"  style="margin-bottom: 20%;">
         <h1 class="blue-text">User Activities</h1>
         <table class="activity-table">
             <thead>
