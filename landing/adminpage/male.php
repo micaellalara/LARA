@@ -2,9 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Male Users List</title>
-</head>
 <style>
     body {
         background-color: #f0f7fc;
@@ -53,7 +50,7 @@
     }
     ?>
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 20%;">
         <h1 class="blue-text">Male User List</h1>
         <table class="activity-table">
             <thead>

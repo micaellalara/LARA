@@ -2,10 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Male Users List</title>
-</head>
 <style>
     body {
         background-color: #f0f7fc;
@@ -13,7 +9,7 @@
     }
 
     .blue-text {
-        color: #5a5c69 !important;
+        color: #5a5c69!important;
         font-weight: bolder;
         font-size: 30px;
         text-align: center;
@@ -55,7 +51,7 @@
     ?>
 
     <div class="container" style="margin-bottom: 20%;">
-        <h1 class="blue-text">Female User List</h1>
+        <h1 class="blue-text">Admin List</h1>
         <table class="activity-table">
             <thead>
                 <tr>
@@ -68,10 +64,10 @@
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT * FROM user_form WHERE gender = 'Female'";
+               $query = "SELECT * FROM user_form WHERE user_type = 'Admin'";
 
-                $result = mysqli_query($conn, $query);
-
+               $result = mysqli_query($conn, $query);
+               
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<tr>';
@@ -93,3 +89,4 @@
 </body>
 
 </html>
+
